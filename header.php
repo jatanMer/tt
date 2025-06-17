@@ -4,6 +4,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <?php
+  // Get the current page URL
+  $current_page = basename($_SERVER['PHP_SELF'], '.php');
+  $canonical_url = 'https://www.teenpatti-download.io/';
+  
+  // Handle search pages
+  if (isset($_GET['s'])) {
+    $canonical_url = 'https://www.teenpatti-download.io/';
+  }
+  // Handle homepage and index variations
+  else if ($current_page == 'index' || $current_page == '') {
+    $canonical_url = 'https://www.teenpatti-download.io/';
+  } else {
+    // Remove .php extension and ensure clean URL
+    $canonical_url .= str_replace('.php', '', $current_page);
+  }
+  ?>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="<?php echo $canonical_url; ?>" />
 
   <title>Teen Patti Master APK Download 2025 | Play Teen Patti Online & Win Real Cash</title>
   <meta name="description" content="Download Teen Patti Master APK 2025 - The best Teen Patti app for Android. Play Teen Patti online, join tournaments, and earn real cash. Secure APK download with referral bonuses." />

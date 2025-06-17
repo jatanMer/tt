@@ -1,4 +1,19 @@
-<?php include('header.php'); ?>
+<?php
+// Handle blog post slugs
+if (isset($_GET['slug'])) {
+    $slug = $_GET['slug'];
+    $slug_map = [
+        'free-download-teen-patti-master-and-win-cash' => 'download-teen-patti-master-apk-guide.php',
+        // Add more slug mappings as needed
+    ];
+    
+    if (isset($slug_map[$slug])) {
+        header("Location: " . $slug_map[$slug], true, 301);
+        exit();
+    }
+}
+
+include('header.php'); ?>
 
 <section class="bg-gradient-to-b from-gray-900 to-black py-16 md:py-20">
   <div class="container mx-auto px-4">
